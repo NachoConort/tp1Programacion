@@ -25,13 +25,13 @@ router.get("/:id", async (req, res) => {
 router.put("/:id", async (req, res) => {
   const body = req.body;
   const id = req.params.id;
-  const respuesta = await modelUser.findOneAndUpdate({id: id}, body);
+  const respuesta = await modelUser.findOneAndUpdate({_id: id}, body);
   res.send(respuesta);
 })
 
 router.delete("/:id", async (req, res) => {
   const id = req.params.id;
-  const respuesta = await modelUser.deleteOne({id: id});
+  const respuesta = await modelUser.deleteOne({_id: id});
   res.send(respuesta);
 })
 
